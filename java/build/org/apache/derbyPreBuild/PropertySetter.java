@@ -515,7 +515,13 @@ public class PropertySetter extends Task
             // 5.0 and later are placed under /usr/jdk/instances. If we don't
             // find JDK 1.4.2 in the parent of JAVA_HOME, it's worth taking a
             // look at /usr/jdk before giving up.
+
             searchPath.add(new File("/usr/jdk"));
+
+            // // searchPath.add(new File("/usr/jdk1.8.0_121"));
+            // searchPath.add(new File("/bin"));
+
+
         }
 
         return searchPath;

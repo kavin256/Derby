@@ -2209,10 +2209,12 @@ public abstract class Connection
         try {
             reset_(logWriter);
         } catch (SqlException sqle) {
-            DisconnectException de = new DisconnectException(agent_, 
-                new ClientMessageId(SQLState.CONNECTION_FAILED_ON_RESET));
-            de.setNextException(sqle);
-            throw de;
+            // DisconnectException de = new DisconnectException(agent_, 
+            //     new ClientMessageId(SQLState.CONNECTION_FAILED_ON_RESET));
+            // de.setNextException(sqle);
+            // throw de;
+
+            throw new MyE("You might not have permission to use this network resource.  Contact the administrator of this server to find out if you have access permissions.", sqle);
         }
     }
 
